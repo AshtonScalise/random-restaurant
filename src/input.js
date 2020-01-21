@@ -1,10 +1,17 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Input = () => {
   const [state, updateState] = useState("77406");
 
-  const handleChange = () => console.log(state);
-
+  const handleChange = async () => {
+    console.log(state);
+    await axios({
+      method: "post",
+      url: "http://localhost:5000/restaurant",
+      data: { zip: state }
+    });
+  };
   return (
     <div>
       <h1>Enter zip code</h1>
