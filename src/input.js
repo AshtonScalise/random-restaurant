@@ -6,14 +6,18 @@ const Input = () => {
   const [restaurant, updateRestaurant] = useState();
 
   const handleChange = async () => {
-    console.log(state);
-    await axios({
-      method: "post",
-      url: "http://localhost:5000/send",
-      data: { zip: state }
-    });
-    var result = await axios.get("http://localhost:5000/outcome");
-    updateRestaurant(result.data);
+    updateRestaurant("");
+    axios
+      .post("http://localhost:5000/send", {
+        zip: state
+      })
+      .then(function(response) {
+        console.log(response.data);
+        updateRestaurant(response.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   };
   return (
     <div>
