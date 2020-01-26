@@ -5,7 +5,6 @@ const Input = () => {
   const [state, updateState] = useState("77406");
   const [restaurant, updateRestaurant] = useState();
   const url = process.env.REACT_APP_API_URL;
-  console.log(url);
 
   const handleChange = async () => {
     updateRestaurant("");
@@ -14,12 +13,9 @@ const Input = () => {
         zip: state
       })
       .then(function(response) {
-        console.log(response.data);
         updateRestaurant(response.data);
       })
-      .catch(function(error) {
-        console.log(error);
-      });
+      .catch(function(error) {});
   };
   return (
     <div>
