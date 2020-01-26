@@ -4,11 +4,13 @@ import axios from "axios";
 const Input = () => {
   const [state, updateState] = useState("77406");
   const [restaurant, updateRestaurant] = useState();
+  const url = process.env.REACT_APP_API_URL;
+  console.log(url);
 
   const handleChange = async () => {
     updateRestaurant("");
     axios
-      .post("http://localhost:5000/send", {
+      .post(url + "/send", {
         zip: state
       })
       .then(function(response) {
