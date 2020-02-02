@@ -61,7 +61,7 @@ const Input = () => {
       </div>
       <div>
         <h6>
-          Support this App by using this link for $5(x3) off your first three
+          Support this App by using this link for $5 off your first three
           doordash orders
         </h6>
         <a href={"https://drd.sh/K9YtKW/"} target="_blank">
