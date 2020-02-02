@@ -10,6 +10,8 @@ const Input = () => {
 
   const handleChange = async () => {
     updateRestaurant("");
+    updateImageUrl("");
+    updateYelpUrl("");
     axios
       .post(url + "/send", {
         zip: state
