@@ -6,12 +6,15 @@ const Input = () => {
   const [restaurant, updateRestaurant] = useState();
   const [imageUrl, updateImageUrl] = useState();
   const [yelpUrl, updateYelpUrl] = useState();
+
+  const [isLoading, updateIsLoading] = useState(false);
   const url = process.env.REACT_APP_API_URL;
 
   const handleChange = async () => {
     updateRestaurant("");
     updateImageUrl("");
     updateYelpUrl("");
+    updateIsLoading(true);
     axios
       .post(url + "/send", {
         zip: state
@@ -20,8 +23,11 @@ const Input = () => {
         updateRestaurant(response.data.restaurant);
         updateImageUrl(response.data.imageUrl);
         updateYelpUrl(response.data.yelpUrl);
+        updateIsLoading(false);
       })
-      .catch(function(error) {});
+      .catch(function(error) {
+        updateIsLoading(false);
+      });
   };
   return (
     <div>
@@ -38,9 +44,13 @@ const Input = () => {
         </div>
       </form>
       <br></br>
-      <button className="button" onClick={handleChange}>
-        Search
-      </button>
+      {!isLoading ? (
+        <button className="button" onClick={handleChange}>
+          Search
+        </button>
+      ) : (
+        <div className="loader"></div>
+      )}
       <div>
         <h1>{restaurant}</h1>
       </div>
