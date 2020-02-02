@@ -4,6 +4,8 @@ import axios from "axios";
 const Input = () => {
   const [state, updateState] = useState("77406");
   const [restaurant, updateRestaurant] = useState();
+  const [imageUrl, updateImageUrl] = useState();
+  const [yelpUrl, updateYelpUrl] = useState();
   const url = process.env.REACT_APP_API_URL;
 
   const handleChange = async () => {
@@ -13,7 +15,9 @@ const Input = () => {
         zip: state
       })
       .then(function(response) {
-        updateRestaurant(response.data);
+        updateRestaurant(response.data.restaurant);
+        updateImageUrl(response.data.imageUrl);
+        updateYelpUrl(response.data.yelpUrl);
       })
       .catch(function(error) {});
   };
@@ -37,6 +41,19 @@ const Input = () => {
       </button>
       <div>
         <h1>{restaurant}</h1>
+      </div>
+      <div>
+        {imageUrl ? (
+          <a href={yelpUrl}>
+            <img
+              src={imageUrl}
+              alt="previewimage"
+              style={({ width: "100%" }, { height: "400px" })}
+            />
+          </a>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
