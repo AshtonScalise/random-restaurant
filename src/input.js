@@ -50,7 +50,9 @@ const Input = () => {
             <img
               src={imageUrl}
               alt="previewimage"
-              style={({ height: "200px" }, { maxWidth: "100%" })}
+              style={
+                ({ height: "200px" }, { width: "800px" }, { maxWidth: "100%" })
+              }
             />
           </a>
         ) : (
@@ -66,7 +68,9 @@ const Input = () => {
           <img
             src={"https://cdn.doordash.com/img/dasher/DD_OpenGraph_preview.png"}
             alt="previewimage"
-            style={({ height: "200px" }, { maxWidth: "100%" })}
+            style={
+              ({ height: "200px" }, { width: "800px" }, { maxWidth: "100%" })
+            }
           />
         </a>
       </div>
