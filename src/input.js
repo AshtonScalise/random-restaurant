@@ -44,22 +44,20 @@ const Input = () => {
       <div>
         <h1>{restaurant}</h1>
       </div>
-      <div>
+      <div style={{ maxWidth: "800px" }}>
         {imageUrl ? (
           <a href={yelpUrl} target="_blank">
             <img
               src={imageUrl}
               alt="previewimage"
-              style={
-                ({ height: "200px" }, { width: "800px" }, { maxWidth: "100%" })
-              }
+              style={({ height: "200px" }, { width: "100%" })}
             />
           </a>
         ) : (
           ""
         )}
       </div>
-      <div>
+      <div style={{ maxWidth: "800px" }}>
         <h6>
           Support this App by using this link for $5 off your first three
           doordash orders
@@ -68,9 +66,7 @@ const Input = () => {
           <img
             src={"https://cdn.doordash.com/img/dasher/DD_OpenGraph_preview.png"}
             alt="previewimage"
-            style={
-              ({ height: "200px" }, { width: "800px" }, { maxWidth: "100%" })
-            }
+            style={({ height: "200px" }, { width: "100%" })}
           />
         </a>
       </div>
