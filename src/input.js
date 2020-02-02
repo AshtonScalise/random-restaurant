@@ -50,7 +50,7 @@ const Input = () => {
             <img
               src={imageUrl}
               alt="previewimage"
-              style={({ width: "100%" }, { height: "400px" })}
+              style={({ width: "100%" }, { height: "200px" })}
             />
           </a>
         ) : (
