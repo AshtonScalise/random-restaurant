@@ -46,7 +46,7 @@ const Input = () => {
       </div>
       <div>
         {imageUrl ? (
-          <a href={yelpUrl}>
+          <a href={yelpUrl} target="_blank">
             <img
               src={imageUrl}
               alt="previewimage"
@@ -56,6 +56,19 @@ const Input = () => {
         ) : (
           ""
         )}
+      </div>
+      <div>
+        <h6>
+          Support this App by using this link for $5(x3) off your first three
+          doordash orders
+        </h6>
+        <a href={"https://drd.sh/K9YtKW/"} target="_blank">
+          <img
+            src={"https://cdn.doordash.com/img/dasher/DD_OpenGraph_preview.png"}
+            alt="previewimage"
+            style={({ width: "100%" }, { height: "200px" })}
+          />
+        </a>
       </div>
     </div>
   );
