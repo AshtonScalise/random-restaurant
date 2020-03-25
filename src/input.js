@@ -98,7 +98,7 @@ const Input = () => {
   }
 
   return (
-    <div>
+    <div className="form-bg">
       <Form.Label>Enter zipcode</Form.Label>
       <Form.Control
         style={{ width: "100%" }}
@@ -107,6 +107,7 @@ const Input = () => {
         value={state}
         onChange={e => updateState(e.target.value)}
       />
+      <br></br>
       {!isLoading ? (
         <Button
           onClick={handleChange}

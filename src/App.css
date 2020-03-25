@@ -22,6 +22,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 100%;
+  background-image: url("./pictures/rest-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-bg {
+  background-color: #282c34;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 40px;
 }
 
 .App-link {
@@ -66,4 +82,8 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.background {
+  background-image: url("https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
