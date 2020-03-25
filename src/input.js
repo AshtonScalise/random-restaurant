@@ -132,22 +132,6 @@ const Input = () => {
           <span className="sr-only">Loading...</span>
         </Button>
       )}
-      <div>
-        <h1>{restaurant}</h1>
-      </div>
-      <div style={{ maxWidth: "800px" }}>
-        {imageUrl ? (
-          <a href={yelpUrl} target="_blank">
-            <img
-              src={imageUrl}
-              alt="previewimage"
-              style={({ height: "200px" }, { width: "100%" })}
-            />
-          </a>
-        ) : (
-          ""
-        )}
-      </div>
       <Button
         onClick={position}
         variant="primary"
@@ -168,6 +152,22 @@ const Input = () => {
           />
         </a>
       </div> */}
+      <div>
+        <h1>{restaurant}</h1>
+      </div>
+      <div style={{ maxWidth: "400px" }}>
+        {imageUrl ? (
+          <a href={yelpUrl} target="_blank">
+            <img
+              src={imageUrl}
+              alt="previewimage"
+              style={({ height: "200px" }, { width: "100%" })}
+            />
+          </a>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };
