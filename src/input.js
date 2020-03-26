@@ -101,7 +101,7 @@ const Input = () => {
     <div className="form-bg">
       <Form.Label>Enter zipcode</Form.Label>
       <Form.Control
-        style={{ width: "100%" }}
+        style={size.width < 768 ? buttonMobile : buttonDesktop}
         variant="primary"
         type="text"
         value={state}
@@ -153,23 +153,23 @@ const Input = () => {
           />
         </a>
       </div> */}
+      <div>
+        <h1>{restaurant}</h1>
+      </div>
+      <div style={{ maxWidth: "400px" }}>
+        {imageUrl ? (
+          <a href={yelpUrl} target="_blank">
+            <img
+              src={imageUrl}
+              alt="previewimage"
+              style={({ height: "200px" }, { width: "100%" })}
+            />
+          </a>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
-          <div>
-          <h1>{restaurant}</h1>
-        </div>
-        <div style={{ maxWidth: "400px" }}>
-          {imageUrl ? (
-            <a href={yelpUrl} target="_blank">
-              <img
-                src={imageUrl}
-                alt="previewimage"
-                style={({ height: "200px" }, { width: "100%" })}
-              />
-            </a>
-          ) : (
-            ""
-          )}
-        </div>
   );
 };
 
