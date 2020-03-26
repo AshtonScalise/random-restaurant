@@ -132,6 +132,7 @@ const Input = () => {
           <span className="sr-only">Loading...</span>
         </Button>
       )}
+      <br></br>
       <Button
         onClick={position}
         variant="primary"
